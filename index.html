@@ -7,10 +7,16 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: #101820;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
             color: #fff;
             margin: 0;
             padding: 0;
+            animation: fadeIn 1.5s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .container {
@@ -21,16 +27,31 @@
 
         .hero-section {
             text-align: center;
-            padding: 40px 20px;
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            animation: slideDown 1s ease;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .avatar {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             overflow: hidden;
             margin: 0 auto 20px;
-            border: 4px solid #555;
+            border: 5px solid #fff;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            transition: transform 0.3s;
+        }
+
+        .avatar:hover {
+            transform: scale(1.05);
         }
 
         .avatar img {
@@ -46,14 +67,28 @@
 
         .tagline {
             font-size: 1.2rem;
-            color: #ccc;
+            color: #f0f0f0;
             margin-bottom: 20px;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: transform 0.3s, background 0.3s;
+        }
+
+        .section:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.1);
         }
 
         .section-title {
             font-size: 1.5rem;
-            margin: 30px 0 15px;
-            border-left: 4px solid #4facfe;
+            margin: 0 0 15px;
+            border-left: 4px solid #00f2fe;
             padding-left: 10px;
         }
 
@@ -73,7 +108,6 @@
         .education-item {
             margin-bottom: 15px;
         }
-
     </style>
 </head>
 <body>
