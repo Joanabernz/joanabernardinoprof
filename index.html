@@ -7,8 +7,8 @@
     <style>
         body {
             font-family: Arial, sans-serif;
-            background: linear-gradient(135deg, #1e3c72, #2a5298);
-            color: #fff;
+            background: linear-gradient(135deg, #d3c0b0, #a6a6a6);
+            color: #333;
             margin: 0;
             padding: 0;
             animation: fadeIn 1.5s ease-in;
@@ -19,6 +19,41 @@
             to { opacity: 1; }
         }
 
+        .header {
+            position: relative;
+            height: 250px;
+            background: linear-gradient(135deg, #a1887f, #d7ccc8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-bottom: 5px solid #8d6e63;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, transparent 70%);
+            animation: moveBg 10s linear infinite;
+        }
+
+        @keyframes moveBg {
+            0% { transform: translate(0, 0); }
+            50% { transform: translate(50px, 50px); }
+            100% { transform: translate(0, 0); }
+        }
+
+        .header h1 {
+            color: #fff;
+            font-size: 2.8rem;
+            position: relative;
+            z-index: 1;
+        }
+
         .container {
             max-width: 1000px;
             margin: auto;
@@ -27,10 +62,10 @@
 
         .hero-section {
             text-align: center;
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #4facfe, #00f2fe);
+            padding: 30px 20px;
+            background: #efebe9;
             border-radius: 15px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             animation: slideDown 1s ease;
         }
 
@@ -45,8 +80,8 @@
             border-radius: 50%;
             overflow: hidden;
             margin: 0 auto 20px;
-            border: 5px solid #fff;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            border: 5px solid #8d6e63;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
             transition: transform 0.3s;
         }
 
@@ -61,40 +96,43 @@
         }
 
         .name {
-            font-size: 2.5rem;
+            font-size: 2.3rem;
             font-weight: bold;
+            color: #5d4037;
         }
 
         .tagline {
             font-size: 1.2rem;
-            color: #f0f0f0;
+            color: #6d4c41;
             margin-bottom: 20px;
         }
 
         .section {
-            background: rgba(255, 255, 255, 0.05);
+            background: #f5f5f5;
             margin-top: 30px;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s, background 0.3s;
         }
 
         .section:hover {
             transform: translateY(-5px);
-            background: rgba(255, 255, 255, 0.1);
+            background: #e0e0e0;
         }
 
         .section-title {
             font-size: 1.5rem;
             margin: 0 0 15px;
-            border-left: 4px solid #00f2fe;
+            border-left: 4px solid #8d6e63;
             padding-left: 10px;
+            color: #4e342e;
         }
 
         .about-text {
             line-height: 1.6;
             margin-bottom: 15px;
+            color: #333;
         }
 
         .contact-item {
@@ -103,14 +141,20 @@
 
         .contact-item h4 {
             margin: 0 0 5px;
+            color: #5d4037;
         }
 
         .education-item {
             margin-bottom: 15px;
         }
+
     </style>
 </head>
 <body>
+    <div class="header">
+        <h1>Welcome to My Portfolio</h1>
+    </div>
+
     <div class="container">
         <div class="hero-section">
             <div class="avatar">
